@@ -699,6 +699,7 @@
     $(".goods_item")
         .mouseenter(function() {
             $(this)
+                .addClass("box-float")
                 .find(".slideinfo")
                 .stop()
                 .animate({
@@ -706,10 +707,12 @@
                         opacity: "1"
                     },
                     "fast"
-                );
+                )
         })
+        
         .mouseleave(function() {
             $(this)
+                .removeClass("box-float")
                 .find(".slideinfo")
                 .stop()
                 .animate({
