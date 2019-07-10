@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #carousel {
+            width: 1600px;
+            height: 900px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+        #btns {
+            position: absolute;
+            left: 710px;
+            top: 850px;
+            position: relative;
+        }
+
+        .btn {
+            float: left;
+            margin-left: 15px;
+            list-style-type: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="carousel">
+
+        <div id="img">
+            <img src="img/3.jpg">
+            <img src="img/2.jpg">
+            <img src="img/4.jpg">
+            <img src="img/1.jpg">
+            <img src="img/5.jpg">
+            <img src="img/6.jpg">
+        </div>
+
+        <ul id="btns">
+            <li class="btn"></li>
+            <li class="btn"></li>
+            <li class="btn"></li>
+            <li class="btn"></li>
+            <li class="btn"></li>
+            <li class="btn"></li>
+        </ul>
+    </div>
+</body>
+<script>
+    img = document.getElementById("img");
+    btns = document.getElementById("btns");
+    all_btn = document.getElementsByClassName("btn");
+
+    c = 0; //大总管变量
+
+    for (i = 0; i < all_btn.length; i++) {
+        all_btn[i].xuhao = i;
+        all_btn[i].onmouseover = function () {
+            this.style.backgroundColor = '#000';
+            c = this.xuhao;
+            showImg(c);
+            clearInterval(autorun);
+        }
+
+        all_btn[i].onmouseout = function () {
+            // this.style.backgroundColor = '#eee';
+            autorun = setInterval(function () {
+
+                showImg(c);
+                c++;
+                if (c == all_img.length) {
+                    c = 0;
+                }
+
+            }, 1000);
+        }
+    }
+
+    all_img = img.getElementsByTagName("img");
+
+    function showImg(xuhao) {
+        for (i = 0; i < all_img.length; i++) {
+            all_img[i].style.display = 'none';
+            all_btn[i].style.backgroundColor = '#eee';
+        }
+        all_img[xuhao].style.display = 'block';
+        all_btn[xuhao].style.backgroundColor = '#000';
+    }
+
+    autorun = setInterval(function () {
+
+        showImg(c);
+        c++;
+        if (c == all_img.length) {
+            c = 0;
+        }
+
+    }, 1500);
+
+
+</script>
+
+</html>
