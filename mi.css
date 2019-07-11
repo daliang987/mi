@@ -725,9 +725,10 @@ del {
 .lunbo {
     width: 1226px;
     height: 460px;
-    background: #eee;
     margin: 0 auto;
     position: relative;
+    overflow: hidden;
+
 }
 
 .lbmenu {
@@ -850,3 +851,18 @@ del {
     position: relative;
     top:-1px;
 }
+
+.lb-product{
+    position: absolute;
+    top: 0;
+    left:0;
+    width:6130px;
+    height: 460px;
+    z-index: -50;
+}
+
+
+.lb-product img{
+    float: left;
+}
+

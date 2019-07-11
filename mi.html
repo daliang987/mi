@@ -36,6 +36,17 @@
     </div>
 
     <div class="lunbo">
+        <div class="lb-product">
+            <img src="img/pic1.jpg" alt="">
+            <img src="img/pic2.jpg" alt="">
+            <img src="img/pic3.jpg" alt="">
+            <img src="img/pic4.jpg" alt="">
+            <img src="img/pic4.jpg" alt="">
+        </div>
+
+
+
+
         <div class="lbmenu">
             <ul>
                 <li>
@@ -55,6 +66,7 @@
                 <li></li>
             </ul>
         </div>
+        <div class="lbmenu-detail"></div>
     </div>
     <div class="mycontainer">
         <div class="newcustom">
@@ -680,7 +692,6 @@
 <script>
     $(".shopClass").hide();
     x = $(".menulist").width();
-    // alert(x);
     $(".menulistitem").mouseenter(function() {
         $(this)
             .find(".shopClass")
@@ -695,6 +706,8 @@
             .find(".shopClass")
             .hide();
     });
+
+    
 
     $(".goods_item")
         .mouseenter(function() {
@@ -723,5 +736,5 @@
                 );
         });
 </script>
-
+        <script src="index.js"></script>
 </html>
