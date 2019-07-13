@@ -11,12 +11,15 @@ $(".lb-button")
 img_index = 0;
 
 function ppt() {
-  if (img_index == 5) {
+
+  if (img_index == 6) {
     img_index = 0;
+    $(".lb-product").css({
+      left: 0
+    });
+
   }
-  $(".lb-product").animate({
-    left: -(img_index * 1226) + "px"
-  });
+
 
   li = $(".lb-button")
     .children("li")
@@ -31,7 +34,19 @@ function ppt() {
       background: "#a0a0a0"
     });
 
+
+  $(".lb-product").animate({
+    left: -(img_index * 1226) + "px"
+  });
+
   img_index++;
+
+  if (img_index == 6) {
+    $(".lb-button").children("li").eq(0).css({
+      background: "#fff"
+    });
+  }
+
 }
 
 pTimer = setInterval(ppt, 3000);
