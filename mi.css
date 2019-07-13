@@ -9,6 +9,7 @@ body {
 
 a {
   text-decoration: none;
+  color:#333;
 }
 
 a:hover {
@@ -173,20 +174,22 @@ a:hover {
   opacity: 0.5;
 }
 
-.new-item-first {
-  background-color: rgb(6, 137, 146);
-  width: 316px;
-  margin-left: 14px;
-  height: 170px;
-  float: left;
-}
-
 .new-item {
   background-color: rgb(6, 137, 146);
   width: 316px;
   margin-left: 15px;
   height: 170px;
   float: left;
+
+}
+
+.new-item:hover{
+  margin-top: -1px;
+  box-shadow: 0 0 10px #b0b0b0;
+}
+
+.new-item-first {
+  margin-left: 14px;
 }
 
 .new-item img {
@@ -194,10 +197,6 @@ a:hover {
   height: 170px;
 }
 
-.new-item-first img {
-  width: 316px;
-  height: 170px;
-}
 
 .tuijian {
   margin-top: 20px;
@@ -223,12 +222,51 @@ a:hover {
   line-height: 58px;
   float: left;
   font-size: 22px;
+  color:#333;
+  font-weight: 200;
 }
 
-.btnSwith {
+.btnSwitch {
+  margin-top: 16px;
   float: right;
-  line-height: 58px;
 }
+
+
+.btn-nav{
+  margin:0;
+  display: block;
+  width:24px;
+  height: 16px;
+  padding:3px 5px;
+  border:1px solid #e0e0e0;
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+  float: right;
+}
+
+.btn-nav:first-of-type{ 
+  margin-left:-1px;
+}
+
+.btn-nav-able{
+  color:#757575;
+}
+
+.btn-nav-disable{
+  color:#e0e0e0;
+}
+
+
+.btn-nav-able:hover{
+  color:#ff6700;
+}
+
+.btn-nav-disable:hover{
+  color:#e0e0e0;
+  cursor: auto;
+}
+
 
 .items {
   background-color: #fafafa;
@@ -240,6 +278,12 @@ a:hover {
   border-top: 2px solid rgb(11, 78, 58);
   padding-top: 38px;
   position: relative;
+}
+
+
+.items:hover{
+  margin-top:-1px;
+  box-shadow: 0 0 15px #e0e0e0;
 }
 
 .items .miaosha {
@@ -308,9 +352,14 @@ del {
   margin-right: 0px;
 }
 
-.item-show {
-  margin-top: 10px;
-  width: 100%;
+.items-show-container{
+  width:1226px;
+  height:340px;
+  overflow: hidden;
+}
+
+.items-show{
+  width: 4946px;
   height: 340px;
 }
 
@@ -319,7 +368,7 @@ del {
 }
 
 .adtiao {
-  margin-top: 2px;
+  margin-top: 28px;
   margin-bottom: 42px;
 }
 
@@ -958,3 +1007,5 @@ del {
   line-height: 40px;
   padding: 18px 20px;
 }
+
+

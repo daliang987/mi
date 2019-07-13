@@ -37,16 +37,16 @@ function ppt() {
 pTimer = setInterval(ppt, 3000);
 
 $(".lunbo")
-  .mouseenter(function() {
+  .mouseenter(function () {
     if (pTimer) {
       clearInterval(pTimer);
     }
   })
-  .mouseleave(function() {
+  .mouseleave(function () {
     pTimer = setInterval(ppt, 3000);
   });
 
-$(".lb-button li").click(function() {
+$(".lb-button li").click(function () {
   // if (pTimer) {
   //   clearInterval(pTimer);
   // }
@@ -69,7 +69,7 @@ $(".lb-button li").click(function() {
 /************* 轮播图上主菜单 start***************/
 
 $(".lbmenu li")
-  .mouseenter(function() {
+  .mouseenter(function () {
     lbmenu_index = $(this).index();
 
     divmenu = $(".lb-detail-list")
@@ -81,13 +81,13 @@ $(".lbmenu li")
       .not(divmenu)
       .hide();
   })
-  .mouseleave(function(e) {
+  .mouseleave(function (e) {
     lbmenu_index = $(this).index();
     divmenu = $(".lb-detail-list")
       .children()
       .eq(lbmenu_index);
 
-    divmenu.mouseleave(function() {
+    divmenu.mouseleave(function () {
       $(this).hide();
     });
 
@@ -100,7 +100,60 @@ $(".lbmenu li")
     // console.log(x, y, x1, y1, x2, y2);
     if (x < x1 || x > x2 || y < y1 || y > y2) {
       divmenu.hide();
-    } 
+    }
   });
 
-/************* 轮播图上主菜单 start***************/
+/************* 轮播图上主菜单 end***************/
+
+
+/***************明星单品轮播图 start******************/
+
+
+
+$(".btnSwitch .btn-nav:first").click(function () {
+  item_left = parseInt($(".items-show").css("margin-left"));
+  // alert(item_left);
+  if (item_left >= -2480) {
+    item_left = (item_left - 1240) + "px";
+    $(".items-show").animate({ marginLeft: item_left }, "slow");
+  }
+
+  item_left = parseInt(item_left);
+  if (item_left == -3720) {
+    $(this).addClass("btn-nav-disable");
+    $(this).attr("disabled")
+  }
+
+  if (item_left <= -1240) {
+    $(".btnSwitch .btn-nav:last").removeClass("btn-nav-disable");
+    $(".btnSwitch .btn-nav:last").addClass("btn-nav-able");
+    $(".btnSwitch .btn-nav:last").attr("enabled");
+
+  }
+
+})
+
+$(".btnSwitch .btn-nav:last").click(function () {
+  item_left = parseInt($(".items-show").css("margin-left"));
+  // alert(item_left);
+  if (item_left <= -1240) {
+    item_left = (item_left + 1240) + "px";
+    $(".items-show").animate({ marginLeft: item_left }, "slow");
+  }
+
+  item_left = parseInt(item_left);
+  if (item_left == 0) {
+    $(this).addClass("btn-nav-disable");
+    $(this).attr("disabled")
+  }
+
+  if (item_left >= -3720) {
+    $(".btnSwitch .btn-nav:first").removeClass("btn-nav-disable");
+    $(".btnSwitch .btn-nav:first").addClass("btn-nav-able");
+    $(".btnSwitch .btn-nav:first").attr("enabled");
+  }
+
+})
+
+
+/***************明星单品轮播图 end******************/
