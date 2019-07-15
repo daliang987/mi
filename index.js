@@ -11,15 +11,12 @@ $(".lb-button")
 img_index = 0;
 
 function ppt() {
-
   if (img_index == 6) {
     img_index = 0;
     $(".lb-product").css({
       left: 0
     });
-
   }
-
 
   li = $(".lb-button")
     .children("li")
@@ -34,7 +31,6 @@ function ppt() {
       background: "#a0a0a0"
     });
 
-
   $(".lb-product").animate({
     left: -(img_index * 1226) + "px"
   });
@@ -42,26 +38,28 @@ function ppt() {
   img_index++;
 
   if (img_index == 6) {
-    $(".lb-button").children("li").eq(0).css({
-      background: "#fff"
-    });
+    $(".lb-button")
+      .children("li")
+      .eq(0)
+      .css({
+        background: "#fff"
+      });
   }
-
 }
 
 pTimer = setInterval(ppt, 3000);
 
 $(".lunbo")
-  .mouseenter(function () {
+  .mouseenter(function() {
     if (pTimer) {
       clearInterval(pTimer);
     }
   })
-  .mouseleave(function () {
+  .mouseleave(function() {
     pTimer = setInterval(ppt, 3000);
   });
 
-$(".lb-button li").click(function () {
+$(".lb-button li").click(function() {
   // if (pTimer) {
   //   clearInterval(pTimer);
   // }
@@ -84,7 +82,7 @@ $(".lb-button li").click(function () {
 /************* 轮播图上主菜单 start***************/
 
 $(".lbmenu li")
-  .mouseenter(function () {
+  .mouseenter(function() {
     lbmenu_index = $(this).index();
 
     divmenu = $(".lb-detail-list")
@@ -96,13 +94,13 @@ $(".lbmenu li")
       .not(divmenu)
       .hide();
   })
-  .mouseleave(function (e) {
+  .mouseleave(function(e) {
     lbmenu_index = $(this).index();
     divmenu = $(".lb-detail-list")
       .children()
       .eq(lbmenu_index);
 
-    divmenu.mouseleave(function () {
+    divmenu.mouseleave(function() {
       $(this).hide();
     });
 
@@ -120,55 +118,96 @@ $(".lbmenu li")
 
 /************* 轮播图上主菜单 end***************/
 
-
 /***************明星单品轮播图 start******************/
 
+$(".btnSwitch").each(function() {
+  $(this)
+    .children(".btn-nav:first")
+    .click(function() {
+      item_left = parseInt($(".items-show").css("margin-left"));
+      // alert(item_left);
+      if (item_left >= -2480) {
+        item_left = item_left - 1240 + "px";
+        $(".items-show").animate({ marginLeft: item_left }, "slow");
+      }
 
+      item_left = parseInt(item_left);
+      if (item_left == -3720) {
+        $(this).addClass("btn-nav-disable");
+        $(this).attr("disabled");
+      }
 
-$(".btnSwitch .btn-nav:first").click(function () {
-  item_left = parseInt($(".items-show").css("margin-left"));
-  // alert(item_left);
-  if (item_left >= -2480) {
-    item_left = (item_left - 1240) + "px";
-    $(".items-show").animate({ marginLeft: item_left }, "slow");
-  }
+      if (item_left <= -1240) {
+        $(".btnSwitch .btn-nav:last").removeClass("btn-nav-disable");
+        $(".btnSwitch .btn-nav:last").addClass("btn-nav-able");
+        $(".btnSwitch .btn-nav:last").attr("enabled");
+      }
+    });
+});
 
-  item_left = parseInt(item_left);
-  if (item_left == -3720) {
-    $(this).addClass("btn-nav-disable");
-    $(this).attr("disabled")
-  }
+$(".btnSwitch").each(function() {
+  $(this)
+    .children(".btn-nav:last")
+    .click(function() {
+      item_left = parseInt($(".items-show").css("margin-left"));
+      // alert(item_left);
+      if (item_left <= -1240) {
+        item_left = item_left + 1240 + "px";
+        $(".items-show").animate({ marginLeft: item_left }, "slow");
+      }
 
-  if (item_left <= -1240) {
-    $(".btnSwitch .btn-nav:last").removeClass("btn-nav-disable");
-    $(".btnSwitch .btn-nav:last").addClass("btn-nav-able");
-    $(".btnSwitch .btn-nav:last").attr("enabled");
+      item_left = parseInt(item_left);
+      if (item_left == 0) {
+        $(this).addClass("btn-nav-disable");
+        $(this).attr("disabled");
+      }
 
-  }
-
-})
-
-$(".btnSwitch .btn-nav:last").click(function () {
-  item_left = parseInt($(".items-show").css("margin-left"));
-  // alert(item_left);
-  if (item_left <= -1240) {
-    item_left = (item_left + 1240) + "px";
-    $(".items-show").animate({ marginLeft: item_left }, "slow");
-  }
-
-  item_left = parseInt(item_left);
-  if (item_left == 0) {
-    $(this).addClass("btn-nav-disable");
-    $(this).attr("disabled")
-  }
-
-  if (item_left >= -3720) {
-    $(".btnSwitch .btn-nav:first").removeClass("btn-nav-disable");
-    $(".btnSwitch .btn-nav:first").addClass("btn-nav-able");
-    $(".btnSwitch .btn-nav:first").attr("enabled");
-  }
-
-})
-
+      if (item_left >= -3720) {
+        $(".btnSwitch .btn-nav:first").removeClass("btn-nav-disable");
+        $(".btnSwitch .btn-nav:first").addClass("btn-nav-able");
+        $(".btnSwitch .btn-nav:first").attr("enabled");
+      }
+    });
+});
 
 /***************明星单品轮播图 end******************/
+
+/***************完成商品展示动态效果 start ***************/
+
+$(".digital .right-item").hide();
+$(".digital").each(function() {
+  $(this)
+    .find(".right-item")
+    .first()
+    .show();
+});
+
+$(".digital ul li").mouseenter(function() {
+  nav_index = $(this).index();
+  nav_length = $(this)
+    .parents("ul")
+    .children("li").length;
+  show_tab = $(this)
+    .parents(".digital")
+    .find(".right-item")
+    .eq(nav_length - 1 - nav_index);
+  show_tab.show();
+  $(this)
+    .parents(".digital")
+    .find(".right-item")
+    .not(show_tab)
+    .hide();
+
+  nav_link = $(this)
+    .parents(".digital")
+    .find("a")
+    .eq(nav_index);
+  nav_link.addClass("nav-link-active");
+  $(this)
+    .parents(".digital")
+    .find("a")
+    .not(nav_link)
+    .removeClass("nav-link-active");
+});
+
+/***************完成商品展示动态效果 end **************/

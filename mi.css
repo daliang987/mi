@@ -9,7 +9,7 @@ body {
 
 a {
   text-decoration: none;
-  color:#333;
+  color: #333;
 }
 
 a:hover {
@@ -180,10 +180,9 @@ a:hover {
   margin-left: 15px;
   height: 170px;
   float: left;
-
 }
 
-.new-item:hover{
+.new-item:hover {
   margin-top: -1px;
   box-shadow: 0 0 10px #b0b0b0;
 }
@@ -197,7 +196,6 @@ a:hover {
   height: 170px;
 }
 
-
 .tuijian {
   margin-top: 20px;
   width: 1226px;
@@ -208,105 +206,110 @@ a:hover {
   height: 58px;
 }
 
-.item-title .more {
-    width: 12px;
-    height: 12px;
-    background-color: #b0b0b0;
-    border-radius: 16px;
-    text-align: center  ; 
-    font-size: 12px;
-    opacity: 0.7;
-    line-height: 12px;
-    padding:4px;
-    margin-top:19px;
-    color:#fff;
-    margin-left: 8px;
-    float: right;
+.item-title ul li {
+  color: #424242;
+  line-height: 58px;
+  margin-left: 8px;
+  position: relative;
+  float: right;
 }
 
+.item-title .phone-more {
+  text-align: right;
+  display: block;
+  width: 200px;
+  height: 58px;
+}
 
+.item-title .view-all {
+  position: absolute;
+  right: 28px;
+  top: 0px;
+  line-height: 58px;
+}
 
+.item-title .phone-more i {
+  font-size: 24px;
+  line-height: 38px;
+  opacity: 0.5;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
 
-.item-title .phone-more:hover{
+.item-title .phone-more:hover {
   border-bottom: none;
-  color:#ff6700;
+  color: #ff6700;
 }
 
 .name {
   line-height: 58px;
   float: left;
   font-size: 22px;
-  color:#333;
+  color: #333;
   font-weight: 200;
 }
-
-
 
 .btnSwitch {
   margin-top: 16px;
   float: right;
 }
 
-
-.btn-nav{
-  margin:0;
+.btn-nav {
+  margin: 0;
   display: block;
-  width:24px;
+  width: 24px;
   height: 16px;
-  padding:3px 5px;
-  border:1px solid #e0e0e0;
+  padding: 3px 5px;
+  border: 1px solid #e0e0e0;
   font-size: 10px;
   line-height: 16px;
   text-align: center;
   float: right;
 }
 
-.btn-nav:first-of-type{ 
-  margin-left:-1px;
+.btn-nav:first-of-type {
+  margin-left: -1px;
 }
 
-.btn-nav-able{
-  color:#757575;
+.btn-nav-able {
+  color: #757575;
 }
 
-.btn-nav-disable{
-  color:#e0e0e0;
+.btn-nav-disable {
+  color: #e0e0e0;
 }
 
-
-.btn-nav-able:hover{
-  color:#ff6700;
+.btn-nav-able:hover {
+  color: #ff6700;
 }
 
-.btn-nav-disable:hover{
-  color:#e0e0e0;
+.btn-nav-disable:hover {
+  color: #e0e0e0;
   cursor: auto;
 }
 
-
 .items {
-  background-color: #fafafa;
+  background-color: #fff;
   width: 234px;
   height: 300px;
   float: left;
   margin-right: 14px;
   margin-bottom: 14px;
-  border-top: 2px solid rgb(11, 78, 58);
-  padding-top: 38px;
   position: relative;
 }
 
-
-.items:hover{
-  margin-top:-1px;
+.items:hover {
+  margin-top: -1px;
   box-shadow: 0 0 15px #e0e0e0;
 }
 
 .items .miaosha {
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   position: absolute;
-  left: 37px;
+  left: 47px;
+  top:40px;
 }
 
 .items .goodsname {
@@ -316,20 +319,13 @@ a:hover {
   text-align: center;
   color: #333;
   position: absolute;
-  top: 204px;
+  top: 200px;
 }
 
-.items .detail {
-  width: 234px;
-  color: #b0b0b0;
-  font-size: 12px;
-  line-height: 18px;
-  margin-bottom: 12px;
-  text-align: center;
-  position: absolute;
-  top: 225px;
-  margin-bottom: 12px;
+.items .goodsname a{
+  color:#333;
 }
+
 
 .items .price {
   width: 234px;
@@ -337,11 +333,22 @@ a:hover {
   font-size: 14px;
   text-align: center;
   position: absolute;
-  bottom: 12px;
+  bottom: 50px;
 }
 
 .currprice {
   color: #fa6509;
+}
+
+.comment-count{
+  width:234px;
+  text-align: center;
+  color:#757575;
+  position: absolute;
+  bottom: 20px;
+  left:0;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 del {
@@ -367,13 +374,13 @@ del {
   margin-right: 0px;
 }
 
-.items-show-container{
-  width:1226px;
-  height:340px;
+.items-show-container {
+  width: 1226px;
+  height: 340px;
   overflow: hidden;
 }
 
-.items-show{
+.items-show {
   width: 4946px;
   height: 340px;
 }
@@ -412,30 +419,38 @@ del {
   margin-left: 30px;
 }
 
-.item-title ul li a {
+.nav-link {
   color: #000;
   font-size: 16px;
   line-height: 58px;
 }
 
-.item-title ul li a:hover {
-  color: #fc7d00;
-  border-bottom: 2px solid #fc7d00;
+.nav-link-active {
+  color: #ff6700;
+  border-bottom: 2px solid #ff6700;
 }
 
 .left-ppt {
   width: 234px;
   height: 614px;
-  background-color: #405896;
   float: left;
+}
+
+.left-ppt .big-image {
+  width: 234px;
+  height: 614px;
+}
+
+.left_goods_item img {
+  width: 234px;
+  height: 300px;
 }
 
 .right-item {
   width: 992px;
   height: 628px;
-  float: right;
+  float: left;
 }
-
 
 .goods_item {
   width: 234px;
@@ -474,10 +489,10 @@ del {
   font-size: 14px;
   text-align: center;
   position: absolute;
-  bottom: 34px;
+  bottom: 30px;
 }
 
-.goods_item img {
+.goods_item .img-show {
   width: 150px;
   height: 150px;
   position: absolute;
@@ -493,8 +508,6 @@ del {
   top: 20px;
 }
 
-
-
 .goods_item .slideinfo {
   width: 234px;
   height: 76px;
@@ -502,10 +515,9 @@ del {
   bottom: -76px;
   left: 0;
   background-color: #ff6700;
-
 }
 
-.goods_item .slideinfo a{
+.goods_item .slideinfo a {
   display: block;
   padding: 8px 30px;
 }
@@ -515,7 +527,6 @@ del {
   color: #fff;
   line-height: 18px;
   margin-bottom: 5px;
-
 }
 
 .goods_item .slideinfo .author {
@@ -782,7 +793,7 @@ del {
   float: left;
 }
 
-.search input[type="submit"] {
+.search button {
   width: 50px;
   height: 50px;
   float: left;
@@ -790,8 +801,26 @@ del {
   border-width: 1px 1px 1px 0;
   border-style: solid;
   border-color: #e0e0e0;
-  font-size: 30px;
+  font-size: 18px;
   line-height: 50px;
+  color: #757575;
+  cursor: pointer;
+}
+
+.search button {
+  transition: background-color 0.5s;
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+}
+
+.search button:hover {
+  background-color: #ff6700;
+  border: 1px solid #ff6700;
+  color: #fff;
+}
+
+.search input[name]:focus {
+    outline: 2px solid #ff6700;
 }
 
 .lunbo {
@@ -901,20 +930,101 @@ del {
   margin-bottom: 14px;
   position: relative;
   overflow: hidden;
-  background: #fc7d00;
 }
 
-.sub-item-1 {
-  width: 243px;
+.sub-item-up {
+  width: 234px;
   height: 143px;
   margin-bottom: 14px;
-  background-color: #444;
+  position: relative;
+  background: #fff;
+  margin-left: 14px;
+  float: left;
+}
+
+.big-image:hover,
+.left_goods_item:hover,
+.sub-item-up:hover,
+.sub-item-more:hover,
+.box-float {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: -1px;
 }
 
 .sub-item-more {
-  width: 243px;
+  width: 234px;
   height: 143px;
-  background-color: #444;
+  position: relative;
+  background: #fff;
+  margin-left: 14px;
+  float: left;
+}
+
+.sub-item-up .sub-item-title {
+  display: block;
+  color: #333;
+  display: block;
+  font-size: 14px;
+  line-height: 21px;
+  position: absolute;
+  top: 35px;
+  left: 30px;
+}
+
+.sub-item-up .sub-item-price {
+  font-size: 12px;
+  line-height: 18px;
+  color: #ff6700;
+  position: absolute;
+  top: 60px;
+  left: 30px;
+}
+
+.sub-item-up .sub-item-price span {
+  font-size: 14px;
+}
+
+.sub-item-up .sub-img {
+  width: 80px;
+  height: 80px;
+}
+
+.sub-item-up .sub-item-img {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 32px;
+}
+
+.sub-more-block {
+  width: 80px;
+  height: 48px;
+  position: absolute;
+  top: 48px;
+  left: 30px;
+  display: block;
+}
+
+.sub-more-block:hover {
+  color: #333;
+}
+
+.sub-more-block small {
+  color: #757575;
+  font-size: 12px;
+}
+
+.sub-item-view-more {
+  font-size: 18px;
+}
+
+.sub-item-view-icon {
+  display: block;
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  color: #ff6700;
 }
 
 .contact-right {
@@ -928,19 +1038,19 @@ del {
   text-align: center;
 }
 
-.contact-right .phone {
+.contact-right .connect-phone {
   margin: 0 0 5px;
   font-size: 22px;
   color: #ff6700;
   line-height: 1;
 }
 
-.contact-right .phone-time {
+.contact-right .connect-phone-time {
   font-size: 12px;
   color: #616161;
 }
 
-.contact-right .phone-money {
+.contact-right .connect-phone-money {
   font-size: 12px;
   margin: 0 0 16px;
   color: #616161;
@@ -960,12 +1070,6 @@ del {
   color: #fff;
   background: #f25807;
   border: #f25807;
-}
-
-.box-float {
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-  position: relative; 
-  top: -1px;
 }
 
 .lb-product {
@@ -1034,5 +1138,3 @@ del {
   line-height: 40px;
   padding: 18px 20px;
 }
-
-
