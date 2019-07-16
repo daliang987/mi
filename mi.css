@@ -229,13 +229,14 @@ a:hover {
 }
 
 .item-title .phone-more i {
-  font-size: 24px;
+  font-size: 22px;
   line-height: 38px;
-  opacity: 0.5;
+  opacity: 0.8;
   position: absolute;
   top: 10px;
   right: 0;
 }
+
 
 .item-title .phone-more:hover {
   border-bottom: none;
@@ -309,7 +310,7 @@ a:hover {
   height: 140px;
   position: absolute;
   left: 47px;
-  top:40px;
+  top: 40px;
 }
 
 .items .goodsname {
@@ -322,10 +323,9 @@ a:hover {
   top: 200px;
 }
 
-.items .goodsname a{
-  color:#333;
+.items .goodsname a {
+  color: #333;
 }
-
 
 .items .price {
   width: 234px;
@@ -340,13 +340,13 @@ a:hover {
   color: #fa6509;
 }
 
-.comment-count{
-  width:234px;
+.comment-count {
+  width: 234px;
   text-align: center;
-  color:#757575;
+  color: #757575;
   position: absolute;
   bottom: 20px;
-  left:0;
+  left: 0;
   font-size: 14px;
   line-height: 21px;
 }
@@ -492,6 +492,25 @@ del {
   bottom: 30px;
 }
 
+.goods_item .price-b {
+  width: 234px;
+  line-height: 21px;
+  font-size: 14px;
+  text-align: center;
+  position: absolute;
+  bottom: 50px;
+}
+
+.goods_item .comment-count {
+  widows: 234px;
+  font-size: 12px;
+  line-height: 18px;
+  columns: #b0b0b0;
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+}
+
 .goods_item .img-show {
   width: 150px;
   height: 150px;
@@ -556,15 +575,299 @@ del {
 .hot-item {
   width: 296px;
   height: 415px;
-  background: #ddd;
+  background: #fff;
   float: left;
   margin-right: 14px;
+  position: relative;
+}
+
+.hot-item .hot-img {
+  widows: 296px;
+  height: 220px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hot-item .hot-comment-content {
+  position: absolute;
+  top: 248px;
+  left: 28px;
+  width: 240px;
+  height: 72px;
+  text-overflow: ellipsis;
+}
+
+.hot-item a {
+  font-size: 14px;
+  line-height: 24px;
+  color: #333;
+}
+
+.hot-item a:hover {
+  color: #333;
+}
+
+.hot-item .hot-comment-user {
+  color: #b0b0b0;
+  width: 240px;
+  height: 18px;
+  font-size: 12px;
+  line-height: 18px;
+  position: absolute;
+  left: 28px;
+  top: 342px;
+}
+
+.hot-item .hot-comment-product {
+  width: 240px;
+  height: 21px;
+  font-size: 14px;
+  position: absolute;
+  left: 28px;
+  top: 368px;
+}
+
+.hot-item .hot-comment-product .hot-item-name {
+  color: #333;
+  text-overflow: ellipsis;
+}
+
+.hot-item .hot-comment-product .seprator {
+  color: #e0e0e0;
+}
+
+.hot-item .item-price {
+  color: #ff6700;
 }
 
 .hot-comment-body {
   width: 1240px;
   height: 415px;
 }
+
+.content-item {
+  width: 296px;
+  height: 420px;
+  border-top: 1px solid #ffac13;
+  margin-right: 14px;
+  float: left;
+  position: relative;
+  background: #fff;
+}
+
+.content-title {
+  width: 276px;
+  height: 24px;
+  font-size: 16px;
+  color: #ffac13;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  left: 10px;
+  top: 45px;
+}
+
+.content-item .content-ppt {
+  width: 296px;
+  height: 333px;
+  position: absolute;
+  left: 0;
+  top: 87px;
+  overflow: hidden;
+}
+
+.content-item .content-ppt .content-ppt-body {
+  list-style: none;
+  width: 888px;
+  height: 333px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.content-item .content-ppt-body .sub-ppt {
+  width: 296px;
+  height: 333px;
+  float: left;
+  position: relative;
+}
+
+.content-item .content-ppt-body .sub-ppt-title {
+  text-align: center;
+  color: #333;
+  font-size: 20px;
+  line-height: 25px;
+  width: 256px;
+  position: absolute;
+  left: 20px;
+  top: 0;
+  text-overflow: ellipsis;
+}
+.content-item .content-ppt-body .sub-ppt-desc {
+  text-align: center;
+  width: 200px;
+  height: 40px;
+  position: absolute;
+  top: 30px;
+  left: 48px;
+  font-size: 12px;
+  line-height: 20px;
+}
+.content-item .content-ppt-body .sub-ppt-desc a {
+  color: #b0b0b0;
+}
+
+.content-item .content-ppt-body .sub-ppt-desc a:hover {
+  color: #b0b0b0;
+}
+
+.content-item .content-ppt-body .sub-ppt-price {
+  text-align: center;
+  font-size: 14px;
+  line-height: 21px;
+  color: #333;
+  width: 200px;
+  height: 40px;
+  position: absolute;
+  top: 80px;
+  left: 48px;
+}
+
+.content-item .sub-ppt-title a:hover,
+.content-item .sub-ppt-price a:hover {
+  color: #333;
+}
+
+.content-item .sub-ppt-jpg {
+  display: block;
+  width: 216px;
+  height: 154px;
+  position: absolute;
+  left: 40px;
+  top: 116px;
+}
+
+.content-item .sub-ppt-jpg img {
+  width: 216px;
+  height: 154px;
+}
+
+.middle-button-left {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 48px;
+  left: 0;
+  top: 201px;
+  background: #757575;
+  opacity: 0.3;
+  color: #fff;
+  font-size: 24px;
+  line-height: 48px;
+  text-align: center;
+  display: none;
+}
+
+.middle-button-left:hover {
+  opacity: 1;
+  color: #fff;
+}
+
+.middle-button-right {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 48px;
+  right: 0;
+  top: 201px;
+  background: #757575;
+  opacity: 0.3;
+  color: #fff;
+  font-size: 24px;
+  line-height: 48px;
+  text-align: center;
+  display: none;
+}
+
+.middle-button-right:hover {
+  opacity: 0.8;
+  color: #fff;
+}
+
+.content-item .bottom-button {
+  list-style: none;
+  width: 296px;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+}
+
+.content-item .bottom-button .bottom-button-li {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background: #b0b0b0;
+  float: left;
+  cursor: pointer;
+  margin-left: 22px;
+  margin-top: 12px;
+}
+
+.content-item .bottom-button li:first-of-type {
+  margin-left: 116px;
+  margin-top: 12px;
+}
+
+.content-item .sub-ppt-more {
+  width: 200px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 48px;
+  text-align: center;
+  color: #b0b0b0;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.content-item .sub-ppt .sub-ppt-button {
+  width: 118px;
+  height: 28px;
+  font-size: 12px;
+  line-height: 28px;
+  color:#ffac13;
+  display: block;
+  border:1px solid #ffac13;
+  position: absolute;
+  top:50px;
+  left:98px;
+  text-align: center;
+}
+
+.content-item .sub-ppt .sub-ppt-button:hover {
+
+  color:#fff;
+  background: #ff920f;
+}
+
+.bottom-button-li-active {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  float: left;
+  cursor: pointer;
+  margin-left: 22px;
+  margin-top: 12px;
+  background: #fff;
+  border: 2px solid #ff6700;
+}
+
+
+
 
 .video {
   width: 1226px;
@@ -581,8 +884,72 @@ del {
   width: 296px;
   height: 285px;
   margin-right: 14px;
-  background: #ddd;
+  background: #fff;
   float: left;
+  position: relative;
+}
+
+.video-show{
+  width:296px;
+  height: 180px;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 0;
+}
+
+.video-show .video-img{
+  width:296px;
+  height: 180px;
+  z-index: 0;
+}
+
+.video-item .video-title{
+  width:296px;
+  height: 21px;
+  position: absolute;
+  top:208px;
+  left:0;
+  text-align: center;
+  line-height: 21px;
+  font-size: 14px;
+}
+
+
+.video-item .video-desc{
+  width:296px;
+  height: 18px;
+  position: absolute;
+  top:235px;
+  color:#b0b0b0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.video-item .video-play {
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  left:20px;
+  top:145px;
+  text-align: center;
+  display: block;
+  border:2px solid #fff;
+  border-radius: 15px;
+}
+
+.video-play-mouse{
+  background: #ff6700;
+}
+
+
+.video-item .video-play i{
+  font-size: 12px;
+  position: absolute;
+  top:4px;
+  left:11px;
+  color:#fff;
 }
 
 .footer-nav {
@@ -820,7 +1187,7 @@ del {
 }
 
 .search input[name]:focus {
-    outline: 2px solid #ff6700;
+  outline: 2px solid #ff6700;
 }
 
 .lunbo {
@@ -942,6 +1309,9 @@ del {
   float: left;
 }
 
+.video-item:hover,
+.content-item:hover,
+.hot-item:hover,
 .big-image:hover,
 .left_goods_item:hover,
 .sub-item-up:hover,

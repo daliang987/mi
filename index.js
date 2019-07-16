@@ -56,7 +56,9 @@ $(".lunbo")
     }
   })
   .mouseleave(function() {
-    pTimer = setInterval(ppt, 3000);
+    if (!pTimer) {
+      pTimer = setInterval(ppt, 3000);
+    }
   });
 
 $(".lb-button li").click(function() {
@@ -211,3 +213,153 @@ $(".digital ul li").mouseenter(function() {
 });
 
 /***************完成商品展示动态效果 end **************/
+
+/**************** 内容展示块轮播效果 start***************/
+
+$(".content-item").each(function() {
+  $(this)
+    .mouseenter(function() {
+      $(this)
+        .find(".middle-button-left")
+        .fadeIn();
+      $(this)
+        .find(".middle-button-right")
+        .fadeIn();
+    })
+    .mouseleave(function() {
+      $(this)
+        .find(".middle-button-left")
+        .fadeOut();
+      $(this)
+        .find(".middle-button-right")
+        .fadeOut();
+    });
+
+  var content_ppt_left = parseInt(
+    $(this)
+      .parent()
+      .find(".content-ppt-body")
+      .css("left")
+  );
+  $(this)
+    .find(".middle-button-left")
+    .click(function() {
+      var content_ppt_left = parseInt(
+        $(this)
+          .parent()
+          .find(".content-ppt-body")
+          .css("left")
+      );
+      if (content_ppt_left != 0) {
+        $(this)
+          .parent()
+          .find(".content-ppt-body")
+          .animate(
+            {
+              left: content_ppt_left + 294 + "px"
+            },
+            "fast"
+          );
+
+        $(this)
+          .parent()
+          .find(".bottom-button-li-active")
+          .addClass("bottom-button-li")
+          .removeClass("bottom-button-li-active")
+          .prev()
+          .addClass("bottom-button-li-active")
+          .removeClass("bottom-button-li");
+      }
+    });
+  $(this)
+    .find(".middle-button-right")
+    .click(function() {
+      var content_ppt_left = parseInt(
+        $(this)
+          .parent()
+          .find(".content-ppt-body")
+          .css("left")
+      );
+      if (content_ppt_left != -588) {
+        $(this)
+          .parent()
+          .find(".content-ppt-body")
+          .animate(
+            {
+              left: content_ppt_left - 294 + "px"
+            },
+            "fast"
+          );
+
+        $(this)
+          .parent()
+          .find(".bottom-button-li-active")
+          .next()
+          .addClass("bottom-button-li-active")
+          .removeClass("bottom-button-li")
+          .siblings("li")
+          .addClass("bottom-button-li")
+          .removeClass("bottom-button-li-active");
+      }
+    });
+
+  $(this)
+    .find(".bottom-button")
+    .each(function() {
+      $(this)
+        .find("li")
+        .click(function() {
+          $(this)
+            .addClass("bottom-button-li-active")
+            .removeClass("bottom-button-li");
+          $(this)
+            .siblings()
+            .addClass("bottom-button-li")
+            .removeClass("bottom-button-li-active");
+
+          b_index = $(this).index();
+          content_ppt_left = parseInt(
+            $(this)
+              .parent()
+              .parent()
+              .find(".content-ppt-body")
+              .css("left")
+          );
+
+          $(this)
+            .parent()
+            .parent()
+            .find(".content-ppt-body")
+            .animate(
+              {
+                left: -(b_index * 294) + "px"
+              },
+              "fast"
+            );
+        });
+    });
+});
+
+/**************** 内容展示块轮播效果 end***************/
+
+/****************** 视频播放鼠标滑入效果 start**************/
+
+$(".video-content")
+  .find(".video-item")
+  .each(function() {
+    $(this)
+      .mouseenter(function() {
+        $(this)
+          .find(".video-play")
+          .css({ "border-color": "#ff6700" })
+          .addClass("video-play-mouse");
+      })
+      .mouseleave(function() {
+        $(this)
+          .find(".video-play")
+          .css({ "border-color": "#fff" })
+          .removeClass("video-play-mouse");
+      });
+  });
+
+/****************** 视频播放鼠标滑入效果 end**************/
