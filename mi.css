@@ -1393,8 +1393,12 @@ del {
   display: block;
   position: absolute;
   top: 40px;
-  right: 30px;
+  right: 40px;
   color: #ff6700;
+}
+
+.fal {
+  font-size: 60px!important;
 }
 
 .contact-right {
