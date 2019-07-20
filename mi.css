@@ -1098,6 +1098,87 @@ del {
   height: 40px;
 }
 
+.navbar-content{
+  width:1226px;
+  height:40px;
+  margin:0 auto;
+}
+
+.navbar .topbar{
+  height: 40px;
+  float: left;
+  list-style: none;
+}
+
+.navbar .topbar li{
+  float: left;
+  color: #424242;;
+  font-size: 12px;
+}
+
+.navbar .topbar li a{
+  font-size: 12px;
+  line-height: 40px;
+  color: #b0b0b0;
+  margin-left:0.5em;
+}
+
+.navbar .topbar li:first-child a{
+  margin-left:0;
+}
+
+.navbar .topbar li a:hover{
+  color:#fff;
+}
+
+
+.navbar .userbar{
+  height: 40px;
+  float: right;
+  list-style: none;
+}
+
+.navbar .userbar li{
+  color:#424242;
+  float: right;
+  position: relative;
+}
+
+.navbar .userbar li a{
+  color:#b0b0b0;
+  font-size: 12px;
+  line-height: 40px;
+  margin-left:0.5em;
+}
+
+.navbar .userbar li a:hover{
+  color:#fff;
+}
+
+.navbar .cart{
+  float:right;
+  margin-left:15px;
+  width:120px;
+  height: 40px;
+  background: #424242;
+}
+
+.navbar .cart a{
+  color:#b0b0b0;
+  display:inline-block;
+  width:120px;
+  height: 40px;
+  columns: #424242;
+  line-height: 40px;
+  font-size: 12px;
+  text-align: center;
+}
+.navbar .cart a i{
+  font-size: 16px;
+}
+
+
+
 .topmenu {
   width: 1226px;
   height: 100px;
