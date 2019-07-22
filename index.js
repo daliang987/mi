@@ -108,10 +108,10 @@ $(".lbmenu li")
 
     var y1 = divmenu.offset().top;
     var x1 = divmenu.offset().left;
-    y2 = y1 + divmenu.height();
-    x2 = x1 + divmenu.width();
-    x = e.pageX;
-    y = e.pageY;
+    var y2 = y1 + divmenu.height();
+    var x2 = x1 + divmenu.width();
+    var x = e.pageX;
+    var y = e.pageY;
     // console.log(x, y, x1, y1, x2, y2);
     if (x < x1 || x > x2 || y < y1 || y > y2) {
       divmenu.hide();
@@ -363,3 +363,62 @@ $(".video-content")
   });
 
 /****************** 视频播放鼠标滑入效果 end**************/
+
+/********************购物车动画 start**********************/
+
+$(".cart")
+  .mouseenter(function() {
+    $(this)
+      .find(".cartmenu")
+      .stop()
+      .slideDown("fast");
+  })
+  .mouseleave(function() {
+    $(this)
+      .find(".cartmenu")
+      .stop()
+      .slideUp("fast");
+  });
+
+/********************购物车动画 end**********************/
+
+/********************购物车动画 start**********************/
+
+$(".nav_product .nav_product_list")
+  .children("li")
+  .each(function() {
+    $(this).mouseenter(function() {
+      var li_index = $(this).index();
+      $(".nav_product_container")
+        .stop()
+        .slideDown("fast");
+
+      $(".nav_product_container")
+        .find("ul")
+        .hide();
+      $(".nav_product_container")
+        .find("ul")
+        .eq(li_index)
+        .show();
+    });
+  })
+  .mouseleave(function(e) {
+
+    $(".nav_product_container").mouseleave(function(){
+      $(this).stop().slideUp();
+    })
+
+    var nav_y1 = $(".nav_product_container").offset().top;
+    var nav_x1 = $(".nav_product_container").offset().left;
+    var nav_y2 = nav_y1 + $(".nav_product_container").height();
+    var nav_x2 = nav_x1 + $(".nav_product_container").width();
+    var x = e.pageX;
+    var y = e.pageY;
+    console.log(nav_x1, nav_y1, nav_x2, nav_y2);
+    console.log(x,y);
+    if (x < nav_x1 || x > nav_x2 || y < nav_y1 || y > nav_y2) {
+      $(".nav_product_container").stop().slideUp();
+    }
+  });
+
+/********************购物车动画 end**********************/

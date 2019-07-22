@@ -237,7 +237,6 @@ a:hover {
   right: 0;
 }
 
-
 .item-title .phone-more:hover {
   border-bottom: none;
   color: #ff6700;
@@ -838,18 +837,17 @@ del {
   height: 28px;
   font-size: 12px;
   line-height: 28px;
-  color:#ffac13;
+  color: #ffac13;
   display: block;
-  border:1px solid #ffac13;
+  border: 1px solid #ffac13;
   position: absolute;
-  top:50px;
-  left:98px;
+  top: 50px;
+  left: 98px;
   text-align: center;
 }
 
 .content-item .sub-ppt .sub-ppt-button:hover {
-
-  color:#fff;
+  color: #fff;
   background: #ff920f;
 }
 
@@ -865,9 +863,6 @@ del {
   background: #fff;
   border: 2px solid #ff6700;
 }
-
-
-
 
 .video {
   width: 1226px;
@@ -889,39 +884,38 @@ del {
   position: relative;
 }
 
-.video-show{
-  width:296px;
+.video-show {
+  width: 296px;
   height: 180px;
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   z-index: 0;
 }
 
-.video-show .video-img{
-  width:296px;
+.video-show .video-img {
+  width: 296px;
   height: 180px;
   z-index: 0;
 }
 
-.video-item .video-title{
-  width:296px;
+.video-item .video-title {
+  width: 296px;
   height: 21px;
   position: absolute;
-  top:208px;
-  left:0;
+  top: 208px;
+  left: 0;
   text-align: center;
   line-height: 21px;
   font-size: 14px;
 }
 
-
-.video-item .video-desc{
-  width:296px;
+.video-item .video-desc {
+  width: 296px;
   height: 18px;
   position: absolute;
-  top:235px;
-  color:#b0b0b0;
+  top: 235px;
+  color: #b0b0b0;
   text-align: center;
   font-size: 12px;
   line-height: 18px;
@@ -931,25 +925,24 @@ del {
   width: 30px;
   height: 20px;
   position: absolute;
-  left:20px;
-  top:145px;
+  left: 20px;
+  top: 145px;
   text-align: center;
   display: block;
-  border:2px solid #fff;
+  border: 2px solid #fff;
   border-radius: 15px;
 }
 
-.video-play-mouse{
+.video-play-mouse {
   background: #ff6700;
 }
 
-
-.video-item .video-play i{
+.video-item .video-play i {
   font-size: 12px;
   position: absolute;
-  top:4px;
-  left:11px;
-  color:#fff;
+  top: 4px;
+  left: 11px;
+  color: #fff;
 }
 
 .footer-nav {
@@ -1098,86 +1091,109 @@ del {
   height: 40px;
 }
 
-.navbar-content{
-  width:1226px;
-  height:40px;
-  margin:0 auto;
+.navbar-content {
+  width: 1226px;
+  height: 40px;
+  margin: 0 auto;
 }
 
-.navbar .topbar{
+.navbar .topbar {
   height: 40px;
   float: left;
   list-style: none;
 }
 
-.navbar .topbar li{
+.navbar .topbar li {
   float: left;
-  color: #424242;;
+  color: #424242;
   font-size: 12px;
 }
 
-.navbar .topbar li a{
+.navbar .topbar li a {
   font-size: 12px;
   line-height: 40px;
   color: #b0b0b0;
-  margin-left:0.5em;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
 }
 
-.navbar .topbar li:first-child a{
-  margin-left:0;
+.navbar .topbar li:first-child a {
+  margin-left: 0;
 }
 
-.navbar .topbar li a:hover{
-  color:#fff;
+.navbar .topbar li a:hover {
+  color: #fff;
 }
 
-
-.navbar .userbar{
+.navbar .userbar {
   height: 40px;
   float: right;
   list-style: none;
 }
 
-.navbar .userbar li{
-  color:#424242;
+.navbar .userbar li {
+  color: #424242;
   float: right;
   position: relative;
+  font-size: 12px;
 }
 
-.navbar .userbar li a{
-  color:#b0b0b0;
+.navbar .userbar li a {
+  color: #b0b0b0;
   font-size: 12px;
   line-height: 40px;
-  margin-left:0.5em;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
 }
 
-.navbar .userbar li a:hover{
-  color:#fff;
+.navbar .userbar li a:hover {
+  color: #fff;
 }
 
-.navbar .cart{
-  float:right;
-  margin-left:15px;
-  width:120px;
+.navbar .cart {
+  float: right;
+  margin-left: 15px;
+  width: 120px;
   height: 40px;
   background: #424242;
 }
 
-.navbar .cart a{
-  color:#b0b0b0;
-  display:inline-block;
-  width:120px;
+.navbar .cart a {
+  color: #b0b0b0;
+  display: inline-block;
+  width: 120px;
   height: 40px;
   columns: #424242;
   line-height: 40px;
   font-size: 12px;
   text-align: center;
 }
-.navbar .cart a i{
+.navbar .cart a i {
   font-size: 16px;
 }
 
+.navbar .cart .cartmenu {
+  width: 316px;
+  height: 83px;
+  position: relative;
+  left: -196px;
+  background: #fff;
+  padding: 15px 0 0 0;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  display: none;
+}
 
+.navbar .cart .cartmenu .cartmenu-info {
+  width: 276px;
+  height: 58px;
+  margin-top:5px;
+  margin-left:20px;
+  font-size: 12px;
+  line-height: 58px;
+  text-align: center;
+  color: #333;
+}
 
 .topmenu {
   width: 1226px;
@@ -1214,14 +1230,111 @@ del {
   top: 0;
 }
 
-.nav_product ul li {
+.nav_product .nav_product_list{
+  float: left;
+  width:515px;
+}
+
+.nav_product .nav_product_list>li {
   height: 100px;
   line-height: 100px;
   font-size: 16px;
   float: left;
   list-style: none;
-  margin-right: 20px;
+  padding-right: 20px;
 }
+
+.nav_product .nav_product_list2{
+  width:170px;
+  height: 100px;
+  float: left;
+}
+
+.nav_product .nav_product_list2>li {
+  height: 100px;
+  line-height: 100px;
+  font-size: 16px;
+  float: left;
+  list-style: none;
+  padding-right: 20px;
+}
+
+.nav_product_container{
+  width: 100%;
+  height: 230px;
+  position: absolute;
+  background: #fff;
+  z-index: 200;
+  border-top:1px solid #e0e0e0;
+  display: none;
+
+}
+
+.nav_product_container .nav_product_detail{
+  width:1226px;
+  height: 230px;
+  margin:0 auto;
+}
+
+.nav_product_container .nav_product_detail ul{
+  list-style: none;
+}
+
+.nav_product_container .nav_product_detail ul li{
+  width:204px;
+  height: 201px;
+  float: left;
+}
+
+.nav_product_container .nav_product_detail ul li .pdt_img{
+  display: block;
+  width:180px;
+  height: 126px;
+  border-right:1px solid #e0e0e0;
+  margin-top:15px;
+  margin-left:22px;
+}
+
+.nav_product_container .nav_product_detail ul li:last-child .pdt_img{
+  border-right:1px solid #fff;
+}
+
+.nav_product_container .nav_product_detail ul li img{
+  width:160px;
+  height: 110px;
+}
+
+.nav_product_container .nav_product_detail .flag{
+  border:1px solid #ff6700;
+  color:#ff6700;
+  font-size: 12px;
+  line-height: 18px;
+  padding:1px 20px;
+  width:24px;
+  margin:0 auto;
+}
+
+.nav_product_container .nav_product_detail .pdt-name{
+  height: 20px;
+}
+
+.nav_product_container .nav_product_detail .pdt-name a{
+  display: inline-block;
+  width:204px;
+  height: 20px;
+  color: #757575;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.nav_product_container .nav_product_detail .pdt-price{
+  color: #ff6700;;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+}
+
 
 .search {
   width: 296px;
@@ -1320,7 +1433,7 @@ del {
 }
 
 .lb-detail-a {
-  width: 992px;
+  width: 990px;
   height: 458px;
   background: #fff;
   position: absolute;
@@ -1328,6 +1441,7 @@ del {
   left: 234px;
   display: none;
   border: 1px solid #e0e0e0;
+  
 }
 
 .lb-detail-b {
@@ -1479,7 +1593,7 @@ del {
 }
 
 .fal {
-  font-size: 60px!important;
+  font-size: 60px !important;
 }
 
 .contact-right {
@@ -1567,13 +1681,13 @@ del {
 }
 
 .lb-detail-list ul {
-  width: 248px;
+  width: 247px;
   height: 458px;
   float: left;
 }
 
 .lb-detail-list ul li {
-  width: 265px;
+  width: 264px;
   height: 76px;
   float: left;
   list-style: none;
