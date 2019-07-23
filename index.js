@@ -11,65 +11,61 @@ $(".lb-button")
 img_index = 0;
 
 function ppt() {
-  if (img_index == 6) {
-    img_index = 0;
+  // console.log("ppt index:" + img_index);
+
+  if (img_index == 5) {
     $(".lb-product").css({
       left: 0
     });
+    img_index = 0;
   }
 
-  li = $(".lb-button")
-    .children("li")
-    .eq(img_index);
-  li.css({
-    background: "#fff"
-  });
-  $(".lb-button")
-    .children("li")
-    .not(li)
-    .css({
-      background: "#a0a0a0"
-    });
+  img_index = img_index + 1;
 
   $(".lb-product").animate({
     left: -(img_index * 1226) + "px"
   });
 
-  img_index++;
-
-  if (img_index == 6) {
+  if (img_index == 5) {
     $(".lb-button")
       .children("li")
-      .eq(0)
-      .css({
-        background: "#fff"
-      });
+      .first()
+      .css({ background: "#fff" })
+      .siblings()
+      .css({ background: "#a0a0a0" });
+  } else {
+    $(".lb-button")
+      .children("li")
+      .eq(img_index)
+      .css({ background: "#fff" })
+      .siblings()
+      .css({ background: "#a0a0a0" });
   }
+
+  // console.log("ppt index:" + img_index);
 }
 
 pTimer = setInterval(ppt, 3000);
 
-$(".lunbo")
-  .mouseenter(function() {
-    if (pTimer) {
-      clearInterval(pTimer);
-    }
-  })
-  .mouseleave(function() {
-    if (!pTimer) {
-      pTimer = setInterval(ppt, 3000);
-    }
-  });
+// $(".lb-product")
+//   .mouseenter(function() {
+//     if (pTimer) {
+//       clearInterval(pTimer);
+//     }
+//   })
+//   .mouseleave(function() {
+//     pTimer = setInterval(ppt, 3000);
+//   });
 
 $(".lb-button li").click(function() {
-  // if (pTimer) {
-  //   clearInterval(pTimer);
-  // }
-  $(this).css({
-    background: "#fff"
-  });
-  $(".lb-button li")
-    .not($(this))
+  if (pTimer) {
+    clearInterval(pTimer);
+  }
+  $(this)
+    .css({
+      background: "#fff"
+    })
+    .siblings()
     .css({
       background: "#a0a0a0"
     });
@@ -77,6 +73,82 @@ $(".lb-button li").click(function() {
   $(".lb-product").animate({
     left: -(img_index * 1226) + "px"
   });
+});
+
+$(".lb-btn-left").click(function() {
+  // console.log("left:" + img_index);
+
+  clearInterval(pTimer);
+
+  if (img_index == 0) {
+    img_index = 5;
+    $(".lb-product").css({
+      left: -(5 * 1226) + "px"
+    });
+  }
+
+  img_index = img_index - 1;
+  $(".lb-product")
+    .stop()
+    .animate({
+      left: -(img_index * 1226) + "px"
+    });
+
+  if (img_index == 5) {
+    $(".lb-button")
+      .children("li")
+      .first()
+      .css({ background: "#fff" })
+      .siblings()
+      .css({ background: "#a0a0a0" });
+  } else {
+    $(".lb-button")
+      .children("li")
+      .eq(img_index)
+      .css({ background: "#fff" })
+      .siblings()
+      .css({ background: "#a0a0a0" });
+  }
+
+  // console.log("left:" + img_index);
+});
+
+$(".lb-btn-right").click(function() {
+  // console.log("right:" + img_index);
+
+  clearInterval(pTimer);
+
+  if (img_index == 5) {
+    img_index = 0;
+    $(".lb-product").css({
+      left: 0
+    });
+  }
+
+  img_index = img_index + 1;
+  $(".lb-product")
+    .stop()
+    .animate({
+      left: -(img_index * 1226) + "px"
+    });
+
+  if (img_index == 5) {
+    $(".lb-button")
+      .children("li")
+      .first()
+      .css({ background: "#fff" })
+      .siblings()
+      .css({ background: "#a0a0a0" });
+  } else {
+    $(".lb-button")
+      .children("li")
+      .eq(img_index)
+      .css({ background: "#fff" })
+      .siblings()
+      .css({ background: "#a0a0a0" });
+  }
+
+  // console.log("right:" + img_index);
 });
 
 /*************轮播图效果js end***************/
@@ -403,10 +475,11 @@ $(".nav_product .nav_product_list")
     });
   })
   .mouseleave(function(e) {
-
-    $(".nav_product_container").mouseleave(function(){
-      $(this).stop().slideUp();
-    })
+    $(".nav_product_container").mouseleave(function() {
+      $(this)
+        .stop()
+        .slideUp();
+    });
 
     var nav_y1 = $(".nav_product_container").offset().top;
     var nav_x1 = $(".nav_product_container").offset().left;
@@ -414,11 +487,57 @@ $(".nav_product .nav_product_list")
     var nav_x2 = nav_x1 + $(".nav_product_container").width();
     var x = e.pageX;
     var y = e.pageY;
-    console.log(nav_x1, nav_y1, nav_x2, nav_y2);
-    console.log(x,y);
+
     if (x < nav_x1 || x > nav_x2 || y < nav_y1 || y > nav_y2) {
-      $(".nav_product_container").stop().slideUp();
+      $(".nav_product_container")
+        .stop()
+        .slideUp();
     }
   });
 
 /********************购物车动画 end**********************/
+
+/***************** 搜索按钮效果 start*********************/
+
+$(".search input[name]")
+  .focus(function() {
+    $(".search .btn-search").css({
+      "border-color": "#ff6700"
+    });
+
+    $(".search .input-tag").hide();
+
+    $(".search .search-history").show();
+  })
+  .blur(function() {
+    $(".search .btn-search").css({
+      "border-color": "#e0e0e0"
+    });
+
+    $(".search .input-tag").show();
+    $(".search .search-history").hide();
+  });
+
+/***************** 搜索按钮效果 end*********************/
+
+/**********下载app效果 start*********/
+
+$("#down_app")
+  .mouseenter(function() {
+    $(this)
+      .find("em")
+      .show();
+    $(this)
+      .find(".app_code")
+      .show();
+  })
+  .mouseleave(function() {
+    $(this)
+      .find("em")
+      .hide();
+    $(this)
+      .find(".app_code")
+      .hide();
+  });
+
+/**********下载app效果 end*********/
